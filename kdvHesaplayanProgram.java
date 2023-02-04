@@ -1,32 +1,33 @@
 import java.util.Scanner;
-
-public class Test {
-
+public class Main {
     public static void main(String[] args) {
+        double kdvsizFiyat, kdvliFiyat, kdv, kdvOran1=0.18,kdvOran2=0.08;
 
-        int mat, fizik, kimya,edebiyat,tarih ;
-        String str;
+
         Scanner input =new Scanner(System.in);
+        System.out.print("KDV'siz fiyatı giriniz:");
+        kdvsizFiyat =input.nextDouble();
 
-        System.out.print("MATEMATİK NOTUNUZU GİRİNİZ:" );
-        mat=input.nextInt();
-        System.out.print("FİZİK NOTUNUZU GİRİNİZ:" );
-        fizik=input.nextInt();
-        System.out.print("KİMYA NOTUNUZU GİRİNİZ:" );
-        kimya=input.nextInt();
-        System.out.print("EDEBİYAT NOTUNUZU GİRİNİZ:" );
-        edebiyat=input.nextInt();
-        System.out.print("TARİH NOTUNUZU GİRİNİZ:" );
-        tarih=input.nextInt();
-        
-        int toplam=(mat+fizik+kimya+edebiyat+tarih);
-        double ort= toplam /5;
+        if((kdvsizFiyat>0)&& (kdvsizFiyat <1000)){
+            kdvliFiyat=(0.18*kdvsizFiyat)+kdvsizFiyat;
+            System.out.println("KDV'li fiyatı:"+kdvliFiyat);
+            kdv=kdvliFiyat-kdvsizFiyat;
+            System.out.println("KDV:"+kdv);
+            System.out.println("KDV oranı:"+kdvOran1);
+        }else if (1000 <= kdvsizFiyat){
+            kdvliFiyat=(0.08*kdvsizFiyat)+kdvsizFiyat;
+            System.out.println("KDV'li fiyatı:"+kdvliFiyat);
+            kdv=kdvliFiyat-kdvsizFiyat;
+            System.out.println("KDV:"+kdv);
+            System.out.println("KDV oranı:"+kdvOran2);
 
-        System.out.println("not ortalamanız:"+ort);
+        }else {
+            System.out.println("Yanlış Bir Rakam Girdiniz:");
+        }
 
-       str= (ort >=60) ? "gectiniz":"kaldınız";
-       System.out.print(str);
-       
+
+    }
+}
 
 
     }
