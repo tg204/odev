@@ -1,23 +1,56 @@
 import java.util.Scanner;
-public class ucgenAlanHesaplama {
+public class login {
 
 	public static void main(String[] args) {
+		
 		Scanner input =new Scanner (System.in);
-		int a,b,c;
-		double u, alan;
-      
-		System.out.print("A kenarı giriniz:");
-		a=input.nextInt();
-		System.out.print("B kenarı giriniz:");
-		b=input.nextInt();
-		System.out.print("C kenarı giriniz:");
-		c=input.nextInt();
-		u=(a+b+c)/2;
-		alan = Math.sqrt((u*(u-a)*(u-b)*(u-c)));
-		System.out.print("ÜÇGENİN ALANI:"+alan);
+		
+		String userName , password ,change ;
+		int  secim;
 		
 		
+		System.out.print("Kullanıcı adınızı giriniz:");
+		userName= input.nextLine();
+		
+		System.out.print("Şifrenizi giriniz:");
+		password = input.nextLine();
+		
+		if(userName.equals("patika") && password.equals("java123")) {
+			System.out.print("hoşgeldiniz");
+				
+		}else {
+			System.out.println("Hatalı giriş yaptiniz.");
+		    System.out.print("şifrenizi sıfırlamak ister misiniz? \n1-evet\n2-hayır\nseçim:");		    		    
+		    secim=input.nextInt();
+		    
+		    change = input.nextLine(); 
+		   
+		    if(secim==1) {
+		    	System.out.print("yeni şifrenizi giriniz:");
+		    	change = input.nextLine();     
+		    	
+		    	if (password!=change) {
+		    		
+		    		System.out.print("Şifre oluşturulamadı, lütfen başka şifre giriniz.");
+		    	}else {
+		    		System.out.print("Şifre oluşturuldu");
+		    	}
+			
+		 	
+		    }else if(secim==2) {
+		    	System.out.print("eski şifrenizi tekrar deneyin.");
+		    	
+		  }
+	  }
+		    	
+		   
 	}
-
 }
+		    		    	
+		   	
+		    	
+		
+
+
+	
 
