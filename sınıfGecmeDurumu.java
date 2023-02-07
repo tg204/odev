@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class sinfGecmeDurumu {
+public class sinifGecmeDurumu {
 
 	public static void main(String[] args) {
 		Scanner input=new Scanner(System.in);
